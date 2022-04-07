@@ -11,7 +11,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+int pedidoDeDatoDeUnEntero();
 int main(void) {
-	puts("!!!Hello World!!!"); /* prints !!!Hello World!!! */
+	setbuf(stdout,NULL);
+	int dato1;
+
+	dato1 = pedidoDeDatoDeUnEntero();
+
+    printf("tu numero es  : %d",dato1);
 	return EXIT_SUCCESS;
 }
+int pedidoDeDatoDeUnEntero(){
+	int datoPedido;
+	printf("ingrese un numero :");
+	scanf("%d",&datoPedido);
+    return  datoPedido;
+}
+
