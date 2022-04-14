@@ -14,17 +14,32 @@
 int pedidoDeDatoDeUnEntero();
 int main(void) {
 	setbuf(stdout,NULL);
-	int dato1;
 
-	dato1 = pedidoDeDatoDeUnEntero();
+   int opcionDelMenu;
 
-    printf("tu numero es  : %d",dato1);
-	return EXIT_SUCCESS;
-}
-int pedidoDeDatoDeUnEntero(){
-	int datoPedido;
-	printf("ingrese un numero :");
-	scanf("%d",&datoPedido);
-    return  datoPedido;
+
+   printf("1. Ingresar Kilometros : \n");
+   printf("2. ingresar Precio de Vuelos : \n");
+   printf("3. Calcular todos los costos : \n");
+   printf("4. Informar resultados  \n");
+   printf("5. Carga forzada de datos  \n");
+   printf("6. Salir \n");
+
+
+   switch(opcionDelMenu){
+   case 1 :
+
+
+
+   break;
+
+
+   }
+
+
+
+
+
+	return  0;
 }
 
