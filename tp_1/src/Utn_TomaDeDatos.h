@@ -13,4 +13,7 @@ int tomarUnEntero(int *punteroNumeroIngresado,int maximo,int minimo,char * mensa
 
 int tomarUnFlotante(float *punteroNumeroIngresado, float maximo,float minimo,char * mensajeLimites,char * mensajeError ,int contadorDeIntentos);
 
+int tomarUnEnteroSinMaximo(int *punteroNumeroIngresado,int minimo,char * mensajeLimites,char * mensajeError ,int contadorDeIntentos);
+
+int tomarUnFlotanteSinMaximo(float *punteroNumeroIngresado,float minimo,char * mensajeLimites,char * mensajeError ,int contadorDeIntentos);
 #endif /* UTN_TOMADEDATOS_H_ */

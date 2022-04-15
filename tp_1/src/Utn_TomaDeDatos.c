@@ -22,7 +22,7 @@
 
 		int numeroDeSeguridad;
 		int retorno;
-		retorno=1;
+		retorno= -1;
 		if(punteroNumeroIngresado != NULL && maximo >= minimo && minimo <= maximo){
 			do{
 				printf("%s",mensajeLimites);
@@ -79,7 +79,72 @@ int tomarUnFlotante(float *punteroNumeroIngresado, float maximo,float minimo,cha
 		return retorno;
 	};
 
+/// @brief
+///
+/// @param puntero_del_numero_que_obtendremos
+/// @param minimo_numero_que_obtendremos
+/// @param mensaje_informando_los_limites
+/// @param mensaje_de_Error
+/// @param contadorDeIntentos
+/// @return
+int tomarUnEnteroSinMaximo(int *punteroNumeroIngresado,int minimo,char * mensajeLimites,char * mensajeError ,int contadorDeIntentos){
 
+		int numeroDeSeguridad;
+		int retorno;
+		retorno=1;
+		if(punteroNumeroIngresado != NULL){
+			do{
+				printf("%s",mensajeLimites);
+				scanf("%d",&numeroDeSeguridad);
+			if(numeroDeSeguridad >= minimo){
+				retorno = 0;
+				*punteroNumeroIngresado = numeroDeSeguridad;
+				break;
+			}else{
+				contadorDeIntentos = contadorDeIntentos - 1 ;
+				printf("%s",mensajeError);
+			}
+
+
+			}while(contadorDeIntentos > 0);
+
+
+		}
+		return retorno;
+	};
+/// @brief
+///
+/// @param puntero_del_numero_que_obtendremos
+/// @param minimo_numero_que_obtendremos
+/// @param mensaje_informando_los_limites
+/// @param mensajeError
+/// @param contadorDeIntentos
+/// @return
+int tomarUnFlotanteSinMaximo(float *punteroNumeroIngresado,float minimo,char * mensajeLimites,char * mensajeError ,int contadorDeIntentos){
+
+		float numeroDeSeguridad;
+		int retorno;
+		retorno= -1;
+		if(punteroNumeroIngresado != NULL){
+			do{
+				printf("%s",mensajeLimites);
+				scanf("%f",&numeroDeSeguridad);
+			if(numeroDeSeguridad >= minimo){
+				retorno = 0;
+				*punteroNumeroIngresado = numeroDeSeguridad;
+				break;
+			}else{
+				contadorDeIntentos = contadorDeIntentos - 1 ;
+				printf("%s",mensajeError);
+			} ;
+
+
+			}while(contadorDeIntentos > 0);
+
+
+		};
+		return retorno;
+	};
 
 
 
