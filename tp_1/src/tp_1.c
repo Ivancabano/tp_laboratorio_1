@@ -10,12 +10,16 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "Utn_tomaDeDatos.h"
+#include "Utn_Calculos.h"
 
-int pedidoDeDatoDeUnEntero();
+
 int main(void) {
 	setbuf(stdout,NULL);
-   int respuestaDeSalida;
+   int errores;
    int opcionDelMenu;
+   float resultadoAumento;
+   float kilomtrosTotales;
 
 do{
    printf("1. Ingresar Kilometros : \n");
@@ -24,15 +28,20 @@ do{
    printf("4. Informar resultados  \n");
    printf("5. Carga forzada de datos  \n");
    printf("6. Salir \n");
-  scanf("%d",&opcionDelMenu);
+
+   errores = tomarUnEntero(&opcionDelMenu,6,1,"ingrese un numero entre 1 y 6, por la opcion del menu a la cual quiera ingresar ","numero ingresado no es valido",3);
 
    switch(opcionDelMenu){
    case 1 :
 	  do{
 		  printf("1. Ingresar Kilometros : \n");
 		  printf("2 salir : \n");
-          scanf("%d",&opcionDelMenu);
-
+		  errores = tomarUnEntero(&opcionDelMenu,2,1,"ingrese un numero entre 1 y 2, por la opcion del menu a la cual quiera ingresar ","numero ingresado no es valido",3);
+           if(opcionDelMenu == 1){
+        	   errores = tomarUnFlotante(&kilomtrosTotales,384400.0,1.0,"ingrese la cantidad de kilometros que quiere recorrer entre 384400 klm y 1klm","numero ingresado no es valido",3);
+        	   printf("gracias por ingresar los klm a recorer lo enviaremos nuevamente al menu de inicio  \n");
+        	   break;
+           }
 	   }while(opcionDelMenu != 2);
 
    break;
@@ -42,7 +51,7 @@ do{
 	   do{
 	 		  printf("1. ingresar Precio de Vuelos : \n");
 	 		  printf("2 salir : \n");
-	           scanf("%d",&opcionDelMenu);
+	 		 errores = tomarUnEntero(&opcionDelMenu,2,1,"ingrese un numero entre 1 y 2, por la opcion del menu a la cual quiera ingresar ","numero ingresado no es valido",3);
 
 	 	   }while(opcionDelMenu != 2);
 
@@ -53,7 +62,7 @@ do{
 	   do{
 	 		  printf("1. Calcular todos los costos : \n");
 	 		  printf("2 salir : \n");
-	           scanf("%d",&opcionDelMenu);
+	 		 errores = tomarUnEntero(&opcionDelMenu,2,1,"ingrese un numero entre 1 y 2, por la opcion del menu a la cual quiera ingresar ","numero ingresado no es valido",3);
 
 	 	   }while(opcionDelMenu != 2);
 
@@ -63,7 +72,7 @@ do{
 	   do{
 	 		  printf("1. Informar resultados : \n");
 	 		  printf("2 salir : \n");
-	           scanf("%d",&opcionDelMenu);
+	 		 errores = tomarUnEntero(&opcionDelMenu,2,1,"ingrese un numero entre 1 y 2, por la opcion del menu a la cual quiera ingresar ","numero ingresado no es valido",3);
 
 	 	   }while(opcionDelMenu != 2);
 
@@ -73,7 +82,7 @@ do{
 	   do{
 	 		  printf("1. Carga forzada de datos : \n");
 	 		  printf("2 salir : \n");
-	           scanf("%d",&opcionDelMenu);
+	 		 errores = tomarUnEntero(&opcionDelMenu,2,1,"ingrese un numero entre 1 y 2, por la opcion del menu a la cual quiera ingresar ","numero ingresado no es valido",3);
 
 	 	   }while(opcionDelMenu != 2);
 
@@ -84,6 +93,8 @@ do{
 
 }while(opcionDelMenu != 6);
 
+printf("que tenga un lindo dia\n");
+printf("la cantidad de kilometros es : %.2f",kilomtrosTotales);
 
 	return  0;
 }

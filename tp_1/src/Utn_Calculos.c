@@ -9,7 +9,12 @@
 #include <stdlib.h>
 
 
-
+/// @brief
+///
+/// @param puntero_al_resultado
+/// @param numero_el_cual_sera_aumentado_o_disminuido
+/// @param porsentaje_expresado_en_decimales_de_aumento
+/// @return
 int calcularAumentoDescuento(float * punteroResultado,float numeroParaAumentar,float porsentajeDeAumentoDescuento){
 	int retorno;
 	retorno =-1;
@@ -25,7 +30,12 @@ int calcularAumentoDescuento(float * punteroResultado,float numeroParaAumentar,f
 	return retorno;
 }
 
-
+/// @brief
+///
+/// @param puntero_al_resultado
+/// @param nuemro_a_dividir
+/// @param numero_por_el_cual_se_dividira
+/// @return
 int convertirDeMonedas(float * punteroResultado,float dividendo,float divisor ){
 	int retorno;
 	float resultadoAuxiliar;
@@ -38,4 +48,36 @@ int convertirDeMonedas(float * punteroResultado,float dividendo,float divisor ){
 
 	}
 	return  retorno;
+}
+
+
+/// @brief
+///
+/// @param puntero_al_resultado
+/// @param numeroUno
+/// @param numeroDos
+/// @return
+int diferenciador(float * punteroDeResultado,float numeroUno,float numeroDos){
+	int retorno;
+	retorno = -1;
+	float resultadoAuxiliar;
+	if(punteroDeResultado != NULL && numeroUno >= 0  && numeroDos >= 0){
+
+		if(numeroUno > numeroDos){
+
+			resultadoAuxiliar = numeroUno - numeroDos;
+			* punteroDeResultado = resultadoAuxiliar;
+			retorno = 0;
+
+		}
+		if(numeroDos > numeroUno){
+
+			resultadoAuxiliar = numeroDos - numeroUno;
+			* punteroDeResultado = resultadoAuxiliar;
+			retorno = 0;
+		}
+
+
+	}
+	return retorno;
 }

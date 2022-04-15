@@ -53,7 +53,7 @@
  /// @param mensaje_de_Error
  /// @param contadorDeIntentos
  /// @return
-float tomarUnFlotante(float *punteroNumeroIngresado, float maximo,float minimo,char * mensajeLimites,char * mensajeError ,int contadorDeIntentos){
+int tomarUnFlotante(float *punteroNumeroIngresado, float maximo,float minimo,char * mensajeLimites,char * mensajeError ,int contadorDeIntentos){
 
 		float numeroDeSeguridad;
 		int retorno;
