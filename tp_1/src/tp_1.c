@@ -113,6 +113,30 @@ do{
 	 		  printf("2 salir : \n");
 	 		 errores = tomarUnEntero(&opcionDelMenu,2,1,"ingrese un numero entre 1 y 2, por la opcion del menu a la cual quiera ingresar ","numero ingresado no es valido",3);
 
+	 		 if(kilomtrosTotales == 0 || precioAerolineas == 0 || precioLatam == 0){
+	 			printf("No se ingreso precio a alguno de los vuelos o kilometraje se le regresara al menu  \n");
+	 			break;
+	 		 }else if(opcionDelMenu ==1){
+	 			printf("KMs: %.2fkm  \n",kilomtrosTotales);
+
+	 			printf("Precio Aerolineas: $%.2f  \n",precioAerolineas);
+	 			printf("el precio  con tarjeta de debito: $%.2f \n",aerolineasDebito);
+	 			printf("el precio con tarjeta  de credito es: $%.2f \n",aerolineasCredito);
+	 			printf("precio pagando con  bitcoins: $%.2f \n",precioEnBitcoinAerolineas);
+	 			printf("mostrar precio unitario: $%.2f \n",precioUnitarioAerolineas);
+
+
+	 			printf("Precio  Latam: %.2f \n",precioLatam);
+	 			printf("el precio  con tarjeta de debito: $%.2f \n",latamDebito);
+	 			printf("el precio con tarjeta  de credito es: $%.2f \n",latamCredito);
+	 			printf("precio pagando con  bitcoins: $%.2f \n",precioEnBitcoinLatam);
+	 			printf("mostrar precio unitario: $%.2f \n",precioUnitarioLatam);
+
+
+
+
+	 			printf("la diferencio de precio es : %.2f \n",diferenciaDePrecio)
+	 		 }
 	 	   }while(opcionDelMenu != 2);
 
       break;
@@ -133,17 +157,9 @@ do{
 }while(opcionDelMenu != 6);
 
 printf("que tenga un lindo dia\n");
-printf("la cantidad de kilometros es : %.2f  \n",kilomtrosTotales);
-printf("el precio para Aerolineas es : %.2f  \n",precioAerolineas);
-printf("el precio para Latam es : %.2f \n",precioLatam);
-printf("el precio para aerolineas debito es : %.2f \n",aerolineasDebito);
-printf("el precio para Latam debito es : %.2f \n",latamDebito);
-printf("el precio para aerolineas credito es : %.2f \n",aerolineasCredito);
-printf("el precio para Latam credito es : %.2f \n",latamCredito);
-printf("el precio en bitcoins para aerolineas : %.2f \n",precioEnBitcoinAerolineas);
-printf("el precio para bitcoin Latam  es : %.2f \n",precioEnBitcoinLatam);
-printf("el precio unitario para   aerolineas es : %.2f \n",precioUnitarioLatam);
-printf("la diferencia de precio es : %.2f \n",diferenciaDePrecio);
+
+
+;
 	return  0;
 }
 
