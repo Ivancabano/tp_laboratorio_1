@@ -40,7 +40,7 @@ do{
    case 2 :
 
 	   do{
-	 		  printf("1. Ingresar Kilometros : \n");
+	 		  printf("1. ingresar Precio de Vuelos : \n");
 	 		  printf("2 salir : \n");
 	           scanf("%d",&opcionDelMenu);
 
@@ -51,7 +51,7 @@ do{
    case 3 :
 
 	   do{
-	 		  printf("1. Ingresar Kilometros : \n");
+	 		  printf("1. Calcular todos los costos : \n");
 	 		  printf("2 salir : \n");
 	           scanf("%d",&opcionDelMenu);
 
@@ -61,7 +61,7 @@ do{
    case 4 :
 
 	   do{
-	 		  printf("1. Ingresar Kilometros : \n");
+	 		  printf("1. Informar resultados : \n");
 	 		  printf("2 salir : \n");
 	           scanf("%d",&opcionDelMenu);
 
@@ -71,7 +71,7 @@ do{
    case 5 :
 
 	   do{
-	 		  printf("1. Ingresar Kilometros : \n");
+	 		  printf("1. Carga forzada de datos : \n");
 	 		  printf("2 salir : \n");
 	           scanf("%d",&opcionDelMenu);
 
