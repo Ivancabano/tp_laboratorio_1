@@ -18,10 +18,23 @@ int main(void) {
 	setbuf(stdout,NULL);
    int errores;
    int opcionDelMenu;
-   float resultadoAumento;
    float kilomtrosTotales;
    float precioAerolineas;
    float precioLatam;
+   float aerolineasDebito;
+   float latamDebito;
+   float aerolineasCredito;
+   float latamCredito;
+   float precioEnBitcoinAerolineas;
+   float precioEnBitcoinLatam;
+   float precioUnitarioAerolineas;
+   float precioUnitarioLatam;
+   float diferenciaDePrecio;
+   errores = 0;
+   kilomtrosTotales =0;
+   precioAerolineas=0;
+   precioLatam=0;
+
 
 do{
    printf("1. Ingresar Kilometros : \n");
@@ -72,10 +85,24 @@ do{
    case 3 :
 
 	   do{
-	 		  printf("1. Calcular todos los costos : \n");
+	 		  printf("1. Desea calcular todos los costos : \n");
 	 		  printf("2 salir : \n");
 	 		 errores = tomarUnEntero(&opcionDelMenu,2,1,"ingrese un numero entre 1 y 2, por la opcion del menu a la cual quiera ingresar ","numero ingresado no es valido",3);
+             if(kilomtrosTotales == 0 || precioAerolineas == 0 || precioLatam == 0){
+            	 printf("No se ingreso precio a alguno de los vuelos o kilometraje se le regresara al menu  \n");
+            	 break;
+             }else if(opcionDelMenu == 1){
+               errores = calcularAumentoDescuento(&aerolineasDebito,precioAerolineas,-0.10);
+               errores = calcularAumentoDescuento(&latamDebito,precioLatam,-0.10);
+               errores = calcularAumentoDescuento(&aerolineasCredito,precioAerolineas,0.25);
+               errores = calcularAumentoDescuento(&latamCredito,precioLatam,0.25);
+               errores =  convertirDeMonedas(&precioEnBitcoinAerolineas,precioAerolineas,4606954.55);
+               errores =  convertirDeMonedas(&precioEnBitcoinLatam,precioLatam,4606954.55);
+               errores =  convertirDeMonedas(&precioUnitarioAerolineas,precioAerolineas,kilomtrosTotales);
+               errores =  convertirDeMonedas(&precioUnitarioLatam,precioLatam,kilomtrosTotales);
+               errores = diferenciador(&diferenciaDePrecio,precioLatam,precioAerolineas);
 
+             }
 	 	   }while(opcionDelMenu != 2);
 
       break;
@@ -106,10 +133,17 @@ do{
 }while(opcionDelMenu != 6);
 
 printf("que tenga un lindo dia\n");
-printf("la cantidad de kilometros es : %.2f",kilomtrosTotales);
-printf("el precio para Aerolineas es : %.2f",precioAerolineas);
-printf("el precio para Latam es : %.2f",precioLatam);
-
+printf("la cantidad de kilometros es : %.2f  \n",kilomtrosTotales);
+printf("el precio para Aerolineas es : %.2f  \n",precioAerolineas);
+printf("el precio para Latam es : %.2f \n",precioLatam);
+printf("el precio para aerolineas debito es : %.2f \n",aerolineasDebito);
+printf("el precio para Latam debito es : %.2f \n",latamDebito);
+printf("el precio para aerolineas credito es : %.2f \n",aerolineasCredito);
+printf("el precio para Latam credito es : %.2f \n",latamCredito);
+printf("el precio en bitcoins para aerolineas : %.2f \n",precioEnBitcoinAerolineas);
+printf("el precio para bitcoin Latam  es : %.2f \n",precioEnBitcoinLatam);
+printf("el precio unitario para   aerolineas es : %.2f \n",precioUnitarioLatam);
+printf("la diferencia de precio es : %.2f \n",diferenciaDePrecio);
 	return  0;
 }
 
